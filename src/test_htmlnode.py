@@ -3,8 +3,9 @@ import unittest
 from htmlnode import *
 
 
-class TestTextNode(unittest.TestCase):
-    def test_HTMLNode(self):
+class TestHTMLNode(unittest.TestCase):
+
+    def test_repr(self):
         empty = HTMLNode()
         tagOnly = HTMLNode("A tag")
         valueOnly = HTMLNode(value="A value")
@@ -16,6 +17,10 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(repr(valueOnly), "HTMLNode(None, A value, None, None)")
         self.assertEqual(repr(childrenOnly), "HTMLNode(None, None, [HTMLNode(A tag, None, None, None), HTMLNode(None, A value, None, None)], None)")
         self.assertEqual(repr(propsOnly), "HTMLNode(None, None, None, {'one': \"one's value\", 'two': \"two's value\"})")
+    
+    def test_props_to_html(self):
+        empty = HTMLNode()
+        propsOnly = HTMLNode(props={"one":"one's value", "two":"two's value"})
         
         self.assertEqual(empty.props_to_html(), "")
         self.assertEqual(propsOnly.props_to_html(), " one=\"one's value\" two=\"two's value\"")

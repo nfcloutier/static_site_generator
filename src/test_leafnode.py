@@ -3,9 +3,9 @@ import unittest
 from leafnode import *
 
 
-class TestTextNode(unittest.TestCase):
+class TestLeafNode(unittest.TestCase):
     
-    def test_LeafNode(self):
+    def test_to_html(self):
         node = LeafNode("p", "Hello, world!")
         noTag = LeafNode(None, "No Tag")
         withTagProps = LeafNode("a", "link text", {"href":"www.url.com"})

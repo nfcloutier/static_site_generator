@@ -6,7 +6,7 @@ class LeafNode(HTMLNode):
 
     def to_html(self):
         if self.value is None:
-            raise ValueError
+            raise ValueError("No value provided")
         if self.tag is None:
             return str(self.value)
         prepend = f"<{self.tag}{self.props_to_html()}>" if self.tag is not None else ""
