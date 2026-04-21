@@ -1,17 +1,3 @@
-'''old_nodes = [
-    TextNode("**This is _text_ with a `code block` word**", TextType.TEXT),
-    TextNode("`This is` text with a code block word", TextType.TEXT),
-    TextNode("This is text with a code block `word`", TextType.TEXT),
-    TextNode("`This is`` text with` a `code block` `word`", TextType.TEXT),
-]
-
-delimiter = "`"
-
-text_type = TextType.CODE
-
-for node in split_nodes_delimiter(old_nodes, delimiter, text_type):
-    print(node)
-'''
 import unittest
 
 from split_nodes_functions import *
